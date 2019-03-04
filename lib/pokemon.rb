@@ -22,7 +22,7 @@ class Pokemon
     self.new(id:pokemon_from_db[0][0], name:pokemon_from_db[0][1], type:pokemon_from_db[0][2], db:db, hp:pokemon_from_db[0][2])
   end
 
-  def alter_hp(damage)
-    @db.execute("UPDATE pokemon set hp = '(hp - ?)' WHERE id = #{self.id}", damage)
+  def alter_hp(hp, db)
+    db.execute("UPDATE pokemon set hp = '?' WHERE id = #{self.id}", hp)
   end
 end
