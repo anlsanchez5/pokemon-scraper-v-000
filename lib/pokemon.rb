@@ -21,7 +21,6 @@ class Pokemon
     @@all.each do |pokemon|
       pokemon.hp = 60
     end
-    binding.pry
   end
 
 
