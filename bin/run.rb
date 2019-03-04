@@ -5,4 +5,4 @@ Scraper.new(@db).scrape
 all_pokemon = @db.execute("SELECT * FROM pokemon;")
 
 # test out your code here!
-alll_pokemon
+all_pokemon
