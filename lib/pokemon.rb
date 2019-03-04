@@ -16,7 +16,8 @@ class Pokemon
   end
 
   def self.add_column(db)
-    db.execute("ALTER TABLE pokemon ADD COLUMN hp INTEGER SET DEFUALT '60'")
+    db.execute("ALTER TABLE pokemon ADD COLUMN hp INTEGER")
+    db.execute("UPDATE pokemon SET hp = 60")
     binding.pry
   end
 
