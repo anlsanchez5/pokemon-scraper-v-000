@@ -14,15 +14,12 @@ class Pokemon
     db.execute("INSERT INTO pokemon (name, type) VALUES (?, ?)",name, type)
   end
 
-  def self.add_column(db)
+  def self.add_hp(db)
     db.execute("ALTER TABLE pokemon ADD COLUMN hp INTEGER")
     db.execute("UPDATE pokemon SET hp = 60")
     binding.pry
   end
 
-  def self.hp_save(hp, db)
-    db.execute("INSERT INTO pokemon (hp) VALUES (?,?)", hp)
-  end
 
   def self.find(id, db)
     pokemon_from_db = db.execute("SELECT * FROM pokemon WHERE id = ?", id)
