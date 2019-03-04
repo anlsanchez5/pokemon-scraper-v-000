@@ -17,6 +17,9 @@ class Pokemon
   def self.add_hp(db)
     db.execute("ALTER TABLE pokemon ADD COLUMN hp INTEGER")
     db.execute("UPDATE pokemon SET hp = 60")
+    @@all.each do |pokemon|
+      pokemon.hp = 60
+    end
     binding.pry
   end
 
